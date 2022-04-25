@@ -20,7 +20,7 @@ export let numberToRoman = (number) =>{
 export let romanToNumber = (string) =>{
 
     let cache = 0;
-
+    string = string.toUpperCase();
     for(let i = 0;i<string.length;i++){
         if(lessNumberTable.has(string[i]+string[i+1])){
             cache+=lessNumberTable.get(string[i]+string[i+1]);
@@ -34,7 +34,7 @@ export let romanToNumber = (string) =>{
 
 export let romanValidator = (string) =>{
     let arrayPointer = [0,0,0,0,0,0,0,0,0,0,0,0,0]
-
+    string = string.toUpperCase();
     for(let i = 0;i<string.length;i++){
         let couple = string[i]+string[i+1];
         if(lessNumberTable.has(string[i]+string[i+1])){
@@ -83,7 +83,7 @@ export let romanValidator = (string) =>{
                     break;                
                 case 5: arrayPointer[10] += 1
                     break;                
-                case 1: arrayPointer[11] += 1
+                case 1: arrayPointer[12] += 1
                     break;
             }
         }else{
